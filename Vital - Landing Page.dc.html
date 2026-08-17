@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#0e1310; }
+  * { box-sizing: border-box; }
+  a { color:#f3f1ec; text-decoration:none; }
+  a:hover { color:#a8e06a; }
+  ::selection { background:#a8e06a; color:#0e1310; }
+</style>
+</helmet>
+<div style="background:#0e1310;color:#f3f1ec;font-family:Archivo,Helvetica,sans-serif;-webkit-font-smoothing:antialiased">
+
+  <header style="position:sticky;top:0;z-index:9;background:rgba(14,19,16,.88);backdrop-filter:blur(10px);border-bottom:1px solid #23302a">
+    <div style="max-width:1200px;margin:0 auto;padding:16px clamp(20px,5vw,48px);display:flex;align-items:center;justify-content:space-between;gap:16px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="width:11px;height:11px;border-radius:50%;background:#a8e06a;display:block"></span>
+        <span style="font-weight:700;letter-spacing:-.01em;font-size:18px">Vital</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7d8b82;letter-spacing:.08em;text-transform:uppercase">Assessoria de marketing</span>
+      </div>
+      <a href="#diagnostico" style="background:#a8e06a;color:#0e1310;font-weight:600;font-size:14px;padding:11px 20px;border-radius:999px" style-hover="background:#bdea86;color:#0e1310">Quero vender mais</a>
+    </div>
+  </header>
+
+  <section style="max-width:1200px;margin:0 auto;padding:clamp(56px,11vh,120px) clamp(20px,5vw,48px) clamp(48px,8vh,88px);display:grid;gap:clamp(32px,5vw,64px);grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:center">
+    <div style="display:grid;gap:26px;align-content:start">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a8e06a">Marketing com contexto</span>
+      <h1 style="font-size:clamp(38px,5.6vw,68px);line-height:1.02;letter-spacing:-.03em;font-weight:700;margin:0;max-width:18ch;text-wrap:balance">Vamos descobrir como vender mais — juntos.</h1>
+      <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:#b9c4bc;max-width:46ch;margin:0;text-wrap:pretty">Não fazemos promessas sem entender seu contexto. Cada negócio é único, cada estratégia também. Começamos ouvindo, medindo e só depois investindo.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a href="#diagnostico" style="background:#a8e06a;color:#0e1310;font-weight:600;font-size:15px;padding:15px 26px;border-radius:999px" style-hover="background:#bdea86;color:#0e1310">Agendar diagnóstico gratuito</a>
+        <a href="#metodo" style="border:1px solid #33443a;color:#dfe5df;font-weight:500;font-size:15px;padding:15px 26px;border-radius:999px" style-hover="border-color:#a8e06a;color:#a8e06a">Ver como trabalhamos</a>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:22px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7d8b82;padding-top:6px">
+        <span>Sem contrato de fidelidade</span>
+        <span>Resposta em até 24h</span>
+        <span>São Paulo · atendimento remoto</span>
+      </div>
+    </div>
+    <sc-if value="{{ showMetrics }}" hint-placeholder-val="{{ true }}">
+    <div style="border:1px solid #23302a;border-radius:14px;padding:clamp(20px,3vw,34px);background:linear-gradient(180deg,#141b17,#101511);display:grid;gap:20px">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7d8b82">O que muda em 90 dias</span>
+      <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="3">
+        <div style="display:grid;gap:6px;padding-bottom:18px;border-bottom:1px solid #1e2a24">
+          <span style="font-size:clamp(30px,3.4vw,42px);font-weight:700;letter-spacing:-.02em;color:#a8e06a;line-height:1">{{ m.value }}</span>
+          <span style="font-size:14px;color:#b9c4bc;line-height:1.45">{{ m.label }}</span>
+        </div>
+      </sc-for>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6c7a71;line-height:1.5">Médias de clientes ativos em 2025. Resultados variam por setor e verba.</span>
+    </div>
+    </sc-if>
+  </section>
+
+  <section style="border-top:1px solid #23302a;border-bottom:1px solid #23302a;background:#111713">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(40px,7vh,72px) clamp(20px,5vw,48px);display:grid;gap:34px">
+      <h2 style="font-size:clamp(24px,2.8vw,34px);font-weight:600;letter-spacing:-.02em;margin:0;max-width:30ch;text-wrap:balance">Se algum destes é o seu caso, a conversa já vale.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:clamp(16px,2vw,28px)">
+        <sc-for list="{{ pains }}" as="p" hint-placeholder-count="4">
+          <div style="display:grid;gap:10px;padding:22px;border:1px solid #23302a;border-radius:12px;background:#0e1310">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#a8e06a">{{ p.num }}</span>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#dfe5df;text-wrap:pretty">{{ p.text }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodo" style="max-width:1200px;margin:0 auto;padding:clamp(48px,9vh,100px) clamp(20px,5vw,48px);display:grid;gap:40px">
+    <div style="display:grid;gap:14px;max-width:60ch">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a8e06a">Como trabalhamos</span>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:700;letter-spacing:-.025em;margin:0;text-wrap:balance">Quatro etapas, nenhuma delas é "confia".</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(18px,2.4vw,32px)">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+        <div style="display:grid;gap:12px;align-content:start;padding-top:20px;border-top:2px solid #a8e06a">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7d8b82">{{ s.num }}</span>
+          <h3 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-.01em">{{ s.title }}</h3>
+          <p style="margin:0;font-size:15px;line-height:1.55;color:#b9c4bc;text-wrap:pretty">{{ s.text }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="servicos" style="border-top:1px solid #23302a;background:#111713">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,9vh,100px) clamp(20px,5vw,48px);display:grid;gap:36px">
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:700;letter-spacing:-.025em;margin:0;max-width:26ch;text-wrap:balance">Serviços que montamos sob o seu contexto</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,2vw,26px)">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+          <div style="display:grid;gap:12px;padding:26px;border:1px solid #23302a;border-radius:12px;background:#0e1310;align-content:start" style-hover="border-color:#3d5245">
+            <h3 style="margin:0;font-size:19px;font-weight:600;letter-spacing:-.01em">{{ s.title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.55;color:#b9c4bc;text-wrap:pretty">{{ s.text }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="diagnostico" style="max-width:1200px;margin:0 auto;padding:clamp(56px,10vh,110px) clamp(20px,5vw,48px);display:grid;gap:clamp(32px,4vw,56px);grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start">
+    <div style="display:grid;gap:20px;align-content:start">
+      <h2 style="font-size:clamp(30px,4.4vw,56px);font-weight:700;letter-spacing:-.03em;line-height:1.03;margin:0;max-width:18ch;text-wrap:balance">Diagnóstico gratuito de 30 minutos</h2>
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#b9c4bc;max-width:44ch;text-wrap:pretty">Você conta onde está travando. Nós devolvemos as três alavancas mais prováveis de destravar venda no seu caso — com ou sem contrato depois.</p>
+      <div style="display:grid;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#dfe5df">
+        <a href="https://wa.me/5511992404815" style="border-bottom:1px solid #33443a;padding-bottom:6px;width:fit-content">WhatsApp — (11) 99240-4815</a>
+        <a href="mailto:contato@vitalevender.com.br" style="border-bottom:1px solid #33443a;padding-bottom:6px;width:fit-content">contato@vitalevender.com.br</a>
+        <a href="https://www.instagram.com/vitalevender/" style="border-bottom:1px solid #33443a;padding-bottom:6px;width:fit-content">@vitalevender</a>
+      </div>
+    </div>
+    <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
+    <div style="border:1px solid #23302a;border-radius:14px;padding:clamp(22px,3vw,32px);background:#141b17;display:grid;gap:16px">
+      <sc-for list="{{ fields }}" as="f" hint-placeholder-count="4">
+        <label style="display:grid;gap:7px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7d8b82">{{ f.label }}</span>
+          <input type="text" placeholder="{{ f.placeholder }}" style="background:#0e1310;border:1px solid #2a3830;border-radius:8px;padding:13px 14px;color:#f3f1ec;font-family:Archivo,sans-serif;font-size:15px;outline:none" style-focus="border-color:#a8e06a" />
+        </label>
+      </sc-for>
+      <label style="display:grid;gap:7px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7d8b82">O que está travando hoje</span>
+        <textarea rows="3" placeholder="Ex.: chegam leads, mas quase ninguém fecha." style="background:#0e1310;border:1px solid #2a3830;border-radius:8px;padding:13px 14px;color:#f3f1ec;font-family:Archivo,sans-serif;font-size:15px;outline:none;resize:vertical" style-focus="border-color:#a8e06a"></textarea>
+      </label>
+      <button type="button" onClick="{{ submit }}" style="background:#a8e06a;color:#0e1310;font-family:Archivo,sans-serif;font-weight:600;font-size:16px;border:none;padding:15px;border-radius:999px;cursor:pointer" style-hover="background:#bdea86">{{ buttonLabel }}</button>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6c7a71;line-height:1.5">Respondemos em até 24h úteis. Seus dados não vão para lista nenhuma.</span>
+    </div>
+    </sc-if>
+    <sc-if value="{{ whatsOnly }}" hint-placeholder-val="{{ false }}">
+    <div style="border:1px solid #23302a;border-radius:14px;padding:clamp(26px,4vw,44px);background:#141b17;display:grid;gap:18px;justify-items:start">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7d8b82">Direto no WhatsApp</span>
+      <p style="margin:0;font-size:19px;line-height:1.5;color:#dfe5df;max-width:34ch;text-wrap:pretty">Manda uma mensagem contando o que está travando. Sem formulário, sem robô.</p>
+      <a href="https://wa.me/5511992404815" style="background:#a8e06a;color:#0e1310;font-weight:600;font-size:16px;padding:15px 28px;border-radius:999px" style-hover="background:#bdea86;color:#0e1310">Abrir conversa →</a>
+    </div>
+    </sc-if>
+  </section>
+
+  <footer style="border-top:1px solid #23302a;background:#111713">
+    <div style="max-width:1200px;margin:0 auto;padding:28px clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:#6c7a71">
+      <span>Vital Assessoria de Marketing — São Paulo, SP</span>
+      <span>© 2026 · vitalevender.com.br</span>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showMetrics&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conteúdo&quot;},&quot;ctaMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Formulário&quot;,&quot;Só WhatsApp&quot;],&quot;default&quot;:&quot;Formulário&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Conteúdo&quot;}}">
+class Component extends DCLogic {
+  state = { sent: false };
+  renderVals() {
+    const whatsOnly = (this.props.ctaMode ?? "Formulário") === "Só WhatsApp";
+    return {
+      showMetrics: this.props.showMetrics ?? true,
+      showForm: !whatsOnly,
+      whatsOnly,
+      buttonLabel: this.state.sent ? "Recebido — falamos em breve ✓" : "Quero meu diagnóstico",
+      submit: () => this.setState({ sent: true }),
+      metrics: [
+        { value: "+42%", label: "de leads qualificados no funil, sem aumentar verba de mídia" },
+        { value: "-31%", label: "no custo por oportunidade após reestruturar oferta e páginas" },
+        { value: "3x", label: "mais clareza: um painel só com os números que decidem" }
+      ],
+      pains: [
+        { num: "01", text: "Você investe em anúncio, aparece movimento, mas a venda não acompanha." },
+        { num: "02", text: "O Instagram cresce e ninguém sabe dizer quanto ele fatura." },
+        { num: "03", text: "Já contratou agência e recebeu relatório bonito sem decisão dentro." },
+        { num: "04", text: "A equipe comercial e o marketing contam histórias diferentes do mesmo cliente." }
+      ],
+      steps: [
+        { num: "Etapa 1", title: "Escuta e diagnóstico", text: "30 minutos entendendo produto, margem, canal e quem realmente compra. Nada de proposta antes disso." },
+        { num: "Etapa 2", title: "Estratégia enxuta", text: "Uma página com oferta, público, canais e a métrica que vamos perseguir. Se não cabe numa página, ainda não está claro." },
+        { num: "Etapa 3", title: "Execução", text: "Conteúdo, mídia paga, páginas e rotina comercial rodando com prazo e responsável definidos." },
+        { num: "Etapa 4", title: "Medição e ajuste", text: "Revisão a cada duas semanas: o que manter, o que cortar, onde colocar o próximo real." }
+      ],
+      services: [
+        { title: "Assessoria de marketing", text: "Acompanhamento contínuo: prioridades do mês, decisões de verba e cobrança de execução." },
+        { title: "Gestão de tráfego pago", text: "Meta e Google com estrutura de campanha ligada à venda, não ao clique." },
+        { title: "Conteúdo e social", text: "Linha editorial que sustenta a oferta — feed, reels e stories com função no funil." },
+        { title: "Páginas que convertem", text: "Landing pages e site com argumento, prova e um único próximo passo." },
+        { title: "Funil e CRM", text: "Do primeiro contato ao fechamento: etapas, cadência de follow-up e o que medir." },
+        { title: "Posicionamento e oferta", text: "Como você é comparado e por que escolhem você. Muda o preço que dá para cobrar." }
+      ],
+      fields: [
+        { label: "Nome", placeholder: "Seu nome" },
+        { label: "WhatsApp", placeholder: "(11) 90000-0000" },
+        { label: "Negócio / site", placeholder: "Nome da empresa ou @" },
+        { label: "Faturamento mensal aproximado", placeholder: "Ajuda a calibrar a conversa" }
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>

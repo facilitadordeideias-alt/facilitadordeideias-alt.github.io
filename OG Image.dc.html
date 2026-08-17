@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  html, body { margin:0; padding:0; background:#0b0d0c; }
+  * { box-sizing:border-box; }
+</style>
+</helmet>
+<div id="og-card" style="width:1200px;height:630px;position:relative;overflow:hidden;background:#0b0d0c;color:#f2f4f1;font-family:Archivo,Helvetica,sans-serif;display:grid;grid-template-columns:1fr 470px">
+  <div style="position:absolute;top:-160px;left:-120px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(63,208,106,.24),transparent 68%);filter:blur(28px)"></div>
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(63,208,106,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(63,208,106,.05) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at 30% 40%,#000,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 30% 40%,#000,transparent 75%)"></div>
+  <div style="position:relative;padding:64px 56px;display:grid;align-content:space-between">
+    <div style="display:flex;align-items:center;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:.18em;text-transform:uppercase;color:#3fd06a">
+      <span style="width:9px;height:9px;border-radius:50%;background:#3fd06a;display:block"></span>Facilitador de ideias
+    </div>
+    <div style="display:grid;gap:20px">
+      <h1 style="margin:0;font-size:66px;line-height:1;letter-spacing:-.035em;font-weight:800;max-width:15ch">Transformando negócios em máquinas de venda.</h1>
+      <p style="margin:0;font-size:24px;line-height:1.4;color:#b4bfb8;max-width:26ch">Growth Marketing · Processo comercial · Posicionamento</p>
+    </div>
+    <div style="display:flex;align-items:baseline;gap:14px">
+      <span style="font-size:28px;font-weight:800;letter-spacing:-.02em">Vitor Henrique</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:#8b978e">Fundador &amp; CEO · Vital</span>
+    </div>
+  </div>
+  <div style="position:relative;height:630px;border-left:1px solid #1d2621">
+    <image-slot id="og-photo" shape="rect" fit="cover" src="./uploads/pasted-1786974584212-0.png" placeholder="foto"></image-slot>
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,#0b0d0c 0%,rgba(11,13,12,.55) 22%,transparent 60%);pointer-events:none"></div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:630}}"></script>
+</body>
+</html>
