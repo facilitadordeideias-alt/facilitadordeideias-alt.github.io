@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Rascunhos do editor — não indexar
+Disallow: /OG%20Image.dc.html
+Disallow: /Vital%20-%20Landing%20Page.dc.html
+
+Sitemap: https://facilitadordeideias-alt.github.io/sitemap.xml
